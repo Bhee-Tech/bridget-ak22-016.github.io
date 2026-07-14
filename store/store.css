@@ -1,0 +1,248 @@
+/* ==========================================================
+   Margin Notes — bookshop styles
+   Bridget Moses Chukwu — AK22/PHS/CSC/016
+
+   This file only holds the styles the bookshop needs.
+   Everything else (colours, fonts, navbar, buttons) comes
+   from style.css, which is loaded first.
+   ========================================================== */
+
+/* ---------- The shelf of books ---------- */
+.books {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 22px;
+  margin-top: 30px;
+}
+
+.book {
+  background-color: #ffffff;
+  border: 1px solid #e5ded4;
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* The coloured square at the top of each book card */
+.cover {
+  height: 140px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 46px;
+}
+
+.cover-1 { background-color: #f2dede; }
+.cover-2 { background-color: #dce8dd; }
+.cover-3 { background-color: #dae0ea; }
+.cover-4 { background-color: #f6e6d3; }
+.cover-5 { background-color: #e6dfea; }
+.cover-6 { background-color: #e4e0d8; }
+
+.book-info {
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.genre {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #a4243b;
+  margin-bottom: 8px;
+}
+
+.book-info p {
+  font-size: 14px;
+  flex-grow: 1;
+  margin-bottom: 18px;
+}
+
+.book-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.cost {
+  font-family: 'Fraunces', Georgia, serif;
+  font-size: 18px;
+  font-weight: 600;
+  color: #1d2b3a;
+}
+
+.add-button {
+  font-family: 'Inter', Arial, sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  color: #a4243b;
+  background-color: #ffffff;
+  border: 1px solid #a4243b;
+  border-radius: 6px;
+  padding: 9px 14px;
+  cursor: pointer;
+}
+
+.add-button:hover {
+  background-color: #a4243b;
+  color: #ffffff;
+}
+
+/* ---------- The basket ---------- */
+.basket {
+  background-color: #ffffff;
+  border: 1px solid #e5ded4;
+  border-radius: 10px;
+  padding: 26px;
+  margin-top: 30px;
+}
+
+.basket-empty {
+  text-align: center;
+  color: #6b6560;
+  padding: 30px 0;
+}
+
+/* One row in the basket, for one book */
+.basket-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px 0;
+  border-bottom: 1px solid #e5ded4;
+}
+
+.basket-row .title {
+  flex-grow: 1;
+  font-weight: 600;
+  font-size: 15px;
+  min-width: 120px;
+}
+
+.basket-row .each {
+  font-size: 13px;
+  font-weight: 400;
+  color: #6b6560;
+  display: block;
+}
+
+/* The minus / number / plus controls */
+.counter {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.counter button {
+  width: 30px;
+  height: 30px;
+  font-size: 16px;
+  color: #1d2b3a;
+  background-color: #faf7f2;
+  border: 1px solid #d5ccbf;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.counter button:hover {
+  border-color: #a4243b;
+  color: #a4243b;
+}
+
+.counter .number {
+  width: 32px;
+  text-align: center;
+  font-weight: 600;
+}
+
+.basket-row .row-cost {
+  font-family: 'Fraunces', Georgia, serif;
+  font-weight: 600;
+  min-width: 82px;
+  text-align: right;
+}
+
+.remove-button {
+  background: none;
+  border: none;
+  font-size: 20px;
+  color: #6b6560;
+  cursor: pointer;
+  padding: 0 6px;
+}
+
+.remove-button:hover {
+  color: #a4243b;
+}
+
+/* ---------- Totals ---------- */
+.total-box {
+  margin-top: 22px;
+}
+
+.total-line {
+  display: flex;
+  justify-content: space-between;
+  padding: 7px 0;
+  color: #6b6560;
+  font-size: 15px;
+}
+
+.total-line.grand {
+  border-top: 1px solid #a4243b;
+  margin-top: 10px;
+  padding-top: 14px;
+  font-family: 'Fraunces', Georgia, serif;
+  font-size: 20px;
+  font-weight: 600;
+  color: #1d2b3a;
+}
+
+.checkout {
+  width: 100%;
+  margin-top: 18px;
+}
+
+.empty-button {
+  width: 100%;
+  margin-top: 9px;
+  font-family: 'Inter', Arial, sans-serif;
+  font-size: 13px;
+  color: #6b6560;
+  background: none;
+  border: 1px solid #e5ded4;
+  border-radius: 6px;
+  padding: 11px;
+  cursor: pointer;
+}
+
+.empty-button:hover {
+  border-color: #a4243b;
+  color: #a4243b;
+}
+
+/* ---------- The receipt ---------- */
+.receipt {
+  background-color: #ffffff;
+  border: 1px solid #a4243b;
+  border-radius: 10px;
+  padding: 30px;
+  margin-top: 24px;
+  max-width: 540px;
+}
+
+/* ---------- Mobile ---------- */
+@media (max-width: 600px) {
+  .basket-row {
+    flex-wrap: wrap;
+  }
+
+  .basket-row .row-cost {
+    margin-left: auto;
+  }
+}

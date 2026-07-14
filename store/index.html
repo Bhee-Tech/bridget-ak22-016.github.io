@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Margin Notes — Bookshop</title>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="store.css">
+</head>
+<body>
+
+  <!-- Navigation bar. The red button switches back to my portfolio. -->
+  <div class="navbar">
+    <div class="container">
+      <a href="index.html" class="logo">Margin Notes</a>
+      <ul class="menu">
+        <li><a href="#shelf" class="active">The shelf</a></li>
+        <li><a href="#cart">Cart</a></li>
+      </ul>
+      <a href="../index.html" class="switch-btn">&larr; Back to Portfolio</a>
+    </div>
+  </div>
+
+  <div class="hero">
+    <div class="container">
+      <span class="label">An independent bookshop</span>
+      <h1>Margin Notes</h1>
+      <p>
+        Six books we think are worth your evening. Add what you like to the basket
+        and the total will work itself out.
+      </p>
+    </div>
+  </div>
+
+  <!-- ============ THE SHELF ============
+       The six books are written straight into the HTML below.
+       Each "Add to basket" button calls addToCart() and passes it
+       the book's id, its title and its price.
+  -->
+  <section id="shelf" class="section-white">
+    <div class="container">
+      <span class="label">The shelf</span>
+      <h2>Six books, in stock</h2>
+
+      <div class="books">
+
+        <div class="book">
+          <div class="cover cover-1">📕</div>
+          <div class="book-info">
+            <span class="genre">Fiction</span>
+            <h3>The Weight of Rain</h3>
+            <p>A quiet novel about a family who stop speaking for a whole summer, and what the silence does to them.</p>
+            <div class="book-bottom">
+              <span class="cost">&#8358;7,500</span>
+              <button class="add-button" onclick="addToCart(1, 'The Weight of Rain', 7500)">Add to basket</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="book">
+          <div class="cover cover-2">📗</div>
+          <div class="book-info">
+            <span class="genre">Non-fiction</span>
+            <h3>How Cities Breathe</h3>
+            <p>A study of how six cities solved their traffic, and why the answer was almost never more roads.</p>
+            <div class="book-bottom">
+              <span class="cost">&#8358;9,200</span>
+              <button class="add-button" onclick="addToCart(2, 'How Cities Breathe', 9200)">Add to basket</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="book">
+          <div class="cover cover-3">📘</div>
+          <div class="book-info">
+            <span class="genre">Memoir</span>
+            <h3>Salt and Iron</h3>
+            <p>A blacksmith's daughter writes about learning her father's trade, and about leaving it behind.</p>
+            <div class="book-bottom">
+              <span class="cost">&#8358;6,800</span>
+              <button class="add-button" onclick="addToCart(3, 'Salt and Iron', 6800)">Add to basket</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="book">
+          <div class="cover cover-4">📙</div>
+          <div class="book-info">
+            <span class="genre">Poetry</span>
+            <h3>Small Hours</h3>
+            <p>Forty short poems written between midnight and four in the morning, mostly about not sleeping.</p>
+            <div class="book-bottom">
+              <span class="cost">&#8358;5,400</span>
+              <button class="add-button" onclick="addToCart(4, 'Small Hours', 5400)">Add to basket</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="book">
+          <div class="cover cover-5">📔</div>
+          <div class="book-info">
+            <span class="genre">History</span>
+            <h3>The Long Market</h3>
+            <p>Four hundred years of trade along the Niger, told through the people who carried the goods.</p>
+            <div class="book-bottom">
+              <span class="cost">&#8358;11,000</span>
+              <button class="add-button" onclick="addToCart(5, 'The Long Market', 11000)">Add to basket</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="book">
+          <div class="cover cover-6">📚</div>
+          <div class="book-info">
+            <span class="genre">Boxed set</span>
+            <h3>The Reader's Bundle</h3>
+            <p>All five books above, wrapped in paper and string, for less than buying them one at a time.</p>
+            <div class="book-bottom">
+              <span class="cost">&#8358;34,000</span>
+              <button class="add-button" onclick="addToCart(6, 'The Reader&rsquo;s Bundle', 34000)">Add to basket</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ THE BASKET ============
+       This area starts empty. JavaScript fills it in.
+  -->
+  <section id="cart">
+    <div class="container">
+      <span class="label">Your basket</span>
+      <h2>What you have chosen</h2>
+
+      <div class="basket">
+
+        <!-- JavaScript writes the list of books into this box -->
+        <div id="basket-list"></div>
+
+        <!-- The totals. Hidden until there is something in the basket. -->
+        <div id="basket-total" class="total-box" style="display: none;">
+          <div class="total-line">
+            <span>Books</span>
+            <span id="subtotal">&#8358;0</span>
+          </div>
+          <div class="total-line">
+            <span>Delivery</span>
+            <span id="delivery">&#8358;0</span>
+          </div>
+          <div class="total-line grand">
+            <span>Total</span>
+            <span id="grand-total">&#8358;0</span>
+          </div>
+
+          <button class="btn checkout" onclick="checkout()">Place the order</button>
+          <button class="empty-button" onclick="emptyBasket()">Empty the basket</button>
+        </div>
+
+      </div>
+
+      <!-- The receipt. Hidden until an order is placed. -->
+      <div id="receipt" class="receipt" style="display: none;">
+        <span class="label">Order placed</span>
+        <h3 id="receipt-title">Thank you</h3>
+        <p id="receipt-text"></p>
+        <button class="btn" onclick="startAgain()" style="margin-top: 16px;">Order something else</button>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="footer">
+    <div class="container">
+      <span><strong>Margin Notes</strong> &mdash; NetCentric Assignment 2</span>
+      <span>Bridget Moses Chukwu &mdash; AK22/PHS/CSC/016</span>
+    </div>
+  </div>
+
+  <script src="store.js"></script>
+</body>
+</html>

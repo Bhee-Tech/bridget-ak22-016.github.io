@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bridget Moses Chukwu — Home</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Navigation bar. The red button on the right switches to the store. -->
+  <div class="navbar">
+    <div class="container">
+      <a href="index.html" class="logo">Bridget Chukwu</a>
+      <ul class="menu">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <a href="store/index.html" class="switch-btn">Visit the Bookshop &rarr;</a>
+    </div>
+  </div>
+
+  <!-- Top of the page -->
+  <div class="hero">
+    <div class="container">
+      <span class="label">NetCentric Computing &mdash; Assignments 1 &amp; 2</span>
+      <h1>Bridget Moses Chukwu</h1>
+      <p>
+        I am a Computer Science student at AK22/PHS/CSC/016. This is my coursework
+        portfolio, and it is linked to a small bookshop website I built for the
+        second assignment. Both were written by hand in Notepad using HTML, CSS
+        and JavaScript.
+      </p>
+      <a href="#comment" class="btn">Leave a comment</a>
+      <a href="store/index.html" class="btn btn-outline">Visit the bookshop</a>
+    </div>
+  </div>
+
+  <!-- The two assignments -->
+  <section class="section-white">
+    <div class="container">
+      <span class="label">My coursework</span>
+      <h2>Two websites, one address.</h2>
+      <p>
+        The button in the navigation bar moves you between this website and the
+        bookshop. It appears on every page of both sites.
+      </p>
+
+      <div class="cards">
+        <div class="card">
+          <span class="card-number">ASSIGNMENT 1</span>
+          <h3>This portfolio</h3>
+          <p>
+            Five pages — Home, About, Services, Projects and Contact — sharing one
+            stylesheet and one navigation bar.
+          </p>
+        </div>
+
+        <div class="card">
+          <span class="card-number">ASSIGNMENT 2</span>
+          <h3>Margin Notes</h3>
+          <p>
+            A bookshop that sells six books. You can add books to a cart, change
+            the quantity, and the total updates as you go.
+          </p>
+        </div>
+
+        <div class="card">
+          <span class="card-number">HOW THEY CONNECT</span>
+          <h3>One button</h3>
+          <p>
+            A red button sits in the navigation bar of every page. On this site it
+            says "Visit the Bookshop". On the bookshop it says "Back to Portfolio".
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== THE COMMENT BOX (required by the assignment) ===== -->
+  <section id="comment">
+    <div class="container">
+      <span class="label">Comment box</span>
+      <h2>Send me a comment</h2>
+      <p style="margin-bottom: 26px;">
+        Anything typed here is sent straight to my email inbox.
+        Dr. Anietie — please use this box to send me further instructions.
+      </p>
+
+      <!--
+        This form does not use JavaScript.
+        The "action" is a Formspree address. When the Send button is
+        pressed, the browser posts the three fields to Formspree, and
+        Formspree forwards them to my email as a message.
+      -->
+      <form class="form-box" action="https://formspree.io/f/mqeraeqd" method="POST">
+
+        <div class="form-row">
+          <label for="name">Your name</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+
+        <div class="form-row">
+          <label for="email">Your email</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+
+        <div class="form-row">
+          <label for="message">Your comment</label>
+          <textarea id="message" name="message" required></textarea>
+        </div>
+
+        <button type="submit" class="btn">Send comment</button>
+
+        <p class="form-note">This comment will be delivered to bridgetchukwu3@gmail.com</p>
+      </form>
+    </div>
+  </section>
+
+  <div class="footer">
+    <div class="container">
+      <span><strong>Bridget Moses Chukwu</strong> &mdash; NetCentric Computing</span>
+      <span>AK22/PHS/CSC/016</span>
+    </div>
+  </div>
+
+</body>
+</html>
