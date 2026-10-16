@@ -83,6 +83,87 @@
     </div>
   </section>
 
+  <!-- UNIT CONVERTER -->
+  <section class="section-white">
+    <div class="container">
+      <span class="label">Unit Converter</span>
+      <h2>Quick Unit Converter</h2>
+      <p>
+        Convert meters to kilometers and grams to kilograms.
+      </p>
+
+      <div class="cards-2">
+
+        <!-- Meter to Kilometer -->
+        <div class="card">
+          <h3>Meter to Kilometer</h3>
+
+          <input
+            type="number"
+            id="meterInput"
+            placeholder="Enter meters"
+            style="padding: 12px; width: 100%; margin-top: 12px;"
+          >
+
+          <button
+            onclick="convertMeter()"
+            class="btn"
+            style="margin-top: 12px;"
+          >
+            Convert
+          </button>
+
+          <p id="meterResult" style="margin-top: 15px;">
+            Result will appear here.
+          </p>
+        </div>
+
+        <!-- Gram to Kilogram -->
+        <div class="card">
+          <h3>Gram to Kilogram</h3>
+
+          <input
+            type="number"
+            id="gramInput"
+            placeholder="Enter grams"
+            style="padding: 12px; width: 100%; margin-top: 12px;"
+          >
+
+          <button
+            onclick="convertGram()"
+            class="btn"
+            style="margin-top: 12px;"
+          >
+            Convert
+          </button>
+
+          <p id="gramResult" style="margin-top: 15px;">
+            Result will appear here.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <script>
+    function convertMeter() {
+      let meters = document.getElementById("meterInput").value;
+      let kilometers = meters / 1000;
+
+      document.getElementById("meterResult").textContent =
+        kilometers + " kilometer(s)";
+    }
+
+    function convertGram() {
+      let grams = document.getElementById("gramInput").value;
+      let kilograms = grams / 1000;
+
+      document.getElementById("gramResult").textContent =
+        kilograms + " kilogram(s)";
+    }
+  </script>
+
   <div class="footer">
     <div class="container">
       <span><strong>Bridget Moses Chukwu</strong> &mdash; NetCentric Computing</span>
